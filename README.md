@@ -1,26 +1,26 @@
-# Intruder_text_based_game
+The architecture of this game is based on a text-based adventure where the player navigates through different rooms of a house, encountering challenges and making decisions along the way. Let's break down its components:
 
-**Midnight Guardian: The Intruder**
+1. **Rooms**:
+   - The game world consists of several interconnected rooms, each represented by a dictionary entry.
+   - Each room has a name and a set of exits, indicating the directions the player can move to reach neighboring rooms.
+   - Some rooms may have special features or challenges, such as an intruder.
 
-**Welcome to Midnight Guardian: The Intruder**
+2. **Movement**:
+   - The player can move between rooms by inputting directional commands, such as 'go north', 'go south', etc.
+   - The `move_between_rooms` function handles the logic for processing player movement. It checks if the desired direction is valid and updates the current room accordingly.
 
-It's 4 am and you've been awakened by strange noises in your home. An intruder has broken in, and you must confront them to stop them from causing harm. Navigate through your home, gather items, and outsmart the intruder before it's too late.
+3. **Game Loop**:
+   - The main game loop (`game_loop` function) continuously prompts the player for input and updates the game state accordingly.
+   - It displays information about the current room, available exits, and prompts the player to input commands.
+   - The loop continues until the player reaches the 'Basement' room or chooses to exit the game.
 
-**Gameplay**
+4. **Intruder Challenge**:
+   - If the player encounters the 'Basement' room, it indicates the presence of an intruder.
+   - The player must confront the intruder by collecting items from other rooms before reaching the basement.
+   - If the player attempts to move to another room without sufficient items, they receive a warning.
 
-* Move between rooms by typing 'go <direction>' (e.g., 'go north' to move to the next room).
-* Type 'exit' to quit the game.
-* If you encounter an intruder, you'll need to have at least 5 items to defeat them.
+5. **Game Initialization**:
+   - The game starts with an introduction message explaining the objective to the player.
+   - It sets the starting room ('Start Room') and initiates the game loop.
 
-**Your Journey Begins**
-
-You find yourself in the **Start Room**. You can move to the **Living Room** by typing 'go east'.
-
-**Explore Your Home and Confront the Intruder**
-
-Will you:
-1. Move to the **Living Room** by typing 'go east'
-2. Type 'exit' to quit the game
-3. Try a different command (e.g., 'go north' to move to the **Meditation Room**)
-
-**Remember to keep an eye out for the intruder and gather items to aid you in your quest!**
+Overall, this architecture provides a framework for a simple text-based adventure game where the player explores a house, faces challenges, and works towards achieving the goal of confronting the intruder in the basement.
